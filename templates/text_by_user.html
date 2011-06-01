@@ -1,3 +1,29 @@
 {% for pastebin in textList %}
 {{pastebin.nick}},{{ pastebin.date }},{{ pastebin.expireDate }}
 {% endfor %}
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<title>Pastebin web application</title>
+<link rel=Stylesheet href="http://localhost/static/style.css" type="text/css">
+
+</head>
+
+<body>
+
+<div id="banner" class="mapElement">
+<div id="bannerInner">
+<p><b>TextUploading</p><img src="http://localhost/static/textup.jpg" height="50"><p>Picture</b></p>
+</div>
+</div>
+
+<div id="nav">
+<h4>Searching</h4>
+<ul>
+    <li><a href="http://localhost/crime/homicide/">NickName<a></li>
+    <li><a href="http://localhost/crime/drugs">Title</a></li> 
+</ul>
+</div>
+
+</body>
+</html>
