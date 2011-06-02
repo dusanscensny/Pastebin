@@ -1,0 +1,17 @@
+* {
+    padding:0;
+    margin:0;
+ }
+
+html, body {
+	background-image: url("http://localhost/templates/background.png");
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+    height: 100%;
+    font-family: arial, sans-serif;
+    font-size: 12px;
+}
+
+#nav h4{
+    margin: 5px;
+}

@@ -4,6 +4,7 @@
  }
 
 html, body {
+
     height: 100%;
     font-family: arial, sans-serif;
     font-size: 12px;
@@ -11,4 +12,62 @@ html, body {
 
 #nav h4{
     margin: 5px;
+}
+
+#header{
+	background-color: #00CC66;
+	border-bottom: 1px solid #C6EB9A;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+#header span.headline{
+    float: right;
+}
+
+#content{
+    padding: 0 20px;
+    margin: 0;
+    width: 70%;
+    float: left;
+}
+
+/*form********/
+form.pastetext ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+form.pastetext ol li{
+    margin: 0;
+    padding: 5px 10px;
+    border-bottom: 1px solid #EEE;
+	clear: left;
+}
+
+
+form.pastetext label{
+    width: 125px;
+    float: left;
+}
+
+form.pastetext #id_content{
+    width: 80%;
+    height: 290px;
+    font-family: monospace;
+   font-size: 0.9em;
+}
+
+form.pastetext #id_nick{
+	width: 20%;
+	opacity: 0.9;
+}
+form.pastetext #id_title{
+    width: 60%;
+    opacity: 0.7;
+}
+
+form.pastetext li.submit input{
+    margin-left: 125px;
 }
