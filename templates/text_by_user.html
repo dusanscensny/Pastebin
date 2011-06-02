@@ -14,57 +14,26 @@
 <div id="content">
 	
     <h2>Text Uploading</h2>
-    
+    <h3>{% for pastebin in textList %}
+	{{pastebin.nick}}
+	{% endfor %}</h3>
+	
 <form method="post" action="." class="pastetext">
-
 <ol>
-    
-    <li>
-        <label for="id_nick">Nick</label> 
-		<input id="id_nick" type="text" name="Nick" maxlength="120" /></br></br>
-			
-        <label for="id_title">Title</label>
-        <input id="id_title" type="text" name="title" maxlength="120" />
-        
-    </li>
-    
-    <li>
-        
-        <label for="id_content">Content</label>
-        <textarea id="id_content" rows="10" cols="40" name="content"></textarea>
-        
-    </li>
-    
-    <li>        
-        <label for="id_expire_options">Expiration time</label><br>  
 		
-		<input type="radio" name="group1" value="3600"> One hour<br>		
-		<input type="radio" name="group1" value="604800" checked> One week<br>
-		<input type="radio" name="group1" value="2592000"> One month<br>	
-		<input type="radio" name="group1" value="3110400000">Forever
-		
-    </li>
-    
-    <li class="submit"><input type="submit" value="Paste it"/></li>
+	<li>
+	{% for pastebin in textList %}
+		{{ pastebin.date}}<br>
+		{{ pastebin.expireDate }}<br>
+	{% endfor %}
+</li>
+<li>
+<a href="./index">Home</a>
+</li>
 </ol>
 </form>
 
 </div>
-
-<div id="nav">
-<h4>Searching</h4>
-<ul>
-    <li><a href="http://localhost/crime/homicide/">NickName<a></li>
-    <li><a href="http://localhost/crime/drugs">Title</a></li> 
-</ul>
-</div>
-
-{% for pastebin in textList %}
-{{pastebin.nick}},{{ pastebin.date }},{{ pastebin.expireDate }}
-{% endfor %}
-
-
-
 
 
 </body>

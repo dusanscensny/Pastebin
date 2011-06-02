@@ -4,9 +4,9 @@ from django.conf.urls.defaults import *
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
-    # Example:
-    (r'^pastebin/([A-Za-z]+)','pastebin.pasteapp.views.text_by_user'),
+urlpatterns = patterns('',    	
+	(r'^pastebin/index.*','pastebin.pasteapp.views.index'),	
+    (r'^pastebin/([A-Za-z]+)','pastebin.pasteapp.views.text_by_user'),	
 	(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static'}),
 
     # Uncomment the admin/doc line below to enable admin documentation:

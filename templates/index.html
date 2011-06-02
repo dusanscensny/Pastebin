@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<title>Pastebin web application</title>
+<link rel=Stylesheet href="http://localhost/static/style.css" type="text/css">
+
+</head>
+<body>
+<div id="header">
+    <span class="headline"></span>
+	<h1>Pastebin web application</h1>
+</div>
+
+<div id="content">
+	
+    <h2>Text Uploading</h2><br>
+    
+<form method="post" action="." class="pastetext">
+
+<ol>
+    
+    <li>
+        <label for="id_nick">Nick</label> 
+		<input id="id_nick" type="text" name="Nick" maxlength="20" /></br></br>
+			
+        <label for="id_title">Title</label>
+        <input id="id_title" type="text" name="title" maxlength="120" />
+        
+    </li>
+    
+    <li>
+        
+        <label for="id_content">Content</label>
+        <textarea id="id_content" rows="10" cols="40" name="content"></textarea>
+        
+    </li>
+    
+    <li>        
+        <label for="id_expire_options">Expiration time</label><br>  
+		
+		<input type="radio" name="group1" value="3600"> One hour<br>		
+		<input type="radio" name="group1" value="604800" checked> One week<br>
+		<input type="radio" name="group1" value="2592000"> One month<br>	
+		<input type="radio" name="group1" value="3110400000">Forever
+		
+    </li>
+    
+    <li class="submit"><input type="submit" value="Paste it" src="/tusec"/></li>
+</ol>
+</form>
+
+</div>
+
+<div id="nav">
+<h4>Searching</h4>
+<ul>	
+	<input id="id_search" type="text" name="search" maxlength="120"/><br><br>
+	<input type="radio" name="group1" value="nick" checked>By Nick<br>		
+	<input type="radio" name="group1" value="title">By Title<br>    
+</ul>
+</div>
+
+</body>
+</html>
