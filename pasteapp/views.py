@@ -1,6 +1,8 @@
 from django.shortcuts import render_to_response, get_list_or_404
-
 from pastebin.pasteapp.models import Pastebin
+from pastebin.forms import PasteForm
+import datetime
+
 
 def text_by_user(request, text):
 	textList = get_list_or_404(Pastebin, nick=text)
@@ -10,15 +12,23 @@ def text_by_user(request, text):
 def index(request):
 	return render_to_response('index.html')
 	
-	
-def pasteForm(request):
-	if request.method = 'POST': #form has been submitted
-		form = pasteForm(request.POST) #store POST data
+
+def paste(request):
+	if request.method == 'POST': #form has been submitted
+		form = PasteForm(request.POST) #store POST data
 		if form.is_valid(): #Validation rules
+			nick = form.cleaned_data['nick']
+			title = form.cleaned_data['title']
+			content = form.cleaned_data['content']
+			expiration = form.clenaed_data['expiration']
+			datetime = datetime.datetime.now()
+			expiredate = datetime.datetime.now() + datetime.timedelta(seconds=int(expiration))
 			
-			return HttpResponseRedirect('/thanks/') #message after post
+			model = Pastebin(nick, datetime, title, content, expiredate)
+			model.save
+			
+			return HttpResponseRedirect('/' + nick + '/') #message after post
 	else:
 		form = pasteForm()
 		
-	return render_to_response('contact.html',{'form':form})
-		
+	return render_to_response('index.html')#,{'form':form})

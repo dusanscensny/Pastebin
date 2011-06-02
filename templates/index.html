@@ -15,13 +15,13 @@
 	
     <h2>Text Uploading</h2><br>
     
-<form method="post" action="." class="pastetext">
-
+<form method="post" action="." class="pastetext">{% csrf_token %}
+{{ form.as_p }}
 <ol>
     
     <li>
         <label for="id_nick">Nick</label> 
-		<input id="id_nick" type="text" name="Nick" maxlength="20" /></br></br>
+		<input id="id_nick" type="text" name="nick" maxlength="20" /></br></br>
 			
         <label for="id_title">Title</label>
         <input id="id_title" type="text" name="title" maxlength="120" />
@@ -38,10 +38,10 @@
     <li>        
         <label for="id_expire_options">Expiration time</label><br>  
 		
-		<input type="radio" name="group1" value="3600"> One hour<br>		
-		<input type="radio" name="group1" value="604800" checked> One week<br>
-		<input type="radio" name="group1" value="2592000"> One month<br>	
-		<input type="radio" name="group1" value="3110400000">Forever
+		<input type="radio" name="expiration" value="3600"> One hour<br>		
+		<input type="radio" name="expiration" value="604800" checked> One week<br>
+		<input type="radio" name="expiration" value="2592000"> One month<br>	
+		<input type="radio" name="expiration" value="3110400000">Forever
 		
     </li>
     
