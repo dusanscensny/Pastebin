@@ -16,12 +16,34 @@
     <h2>Text Uploading</h2><br>
     
 <form method="post" action="." class="pastetext">{% csrf_token %}
-{% for field in form %}
-        <div class="fieldWrapper">
-            {{ field.errors }}
-            {{ field.label_tag }}: {{ field }}
-        </div>
-    {% endfor %}
+{{ form.as_p }}
+<ol>
+    
+    <li>
+        <label for="id_nick">Nick</label> 
+		<input id="id_nick" type="text" name="nick" maxlength="20" /></br></br>
+			
+        <label for="id_title">Title</label>
+        <input id="id_title" type="text" name="title" maxlength="120" />
+        
+    </li>
+    
+    <li>
+        
+        <label for="id_content">Content</label>
+        <textarea id="id_content" rows="10" cols="40" name="content"></textarea>
+        
+    </li>
+    
+    <li>        
+        <label for="id_expire_options">Expiration time</label><br>  
+		
+		<input type="radio" name="expiration" value="3600"> One hour<br>		
+		<input type="radio" name="expiration" value="604800" checked> One week<br>
+		<input type="radio" name="expiration" value="2592000"> One month<br>	
+		<input type="radio" name="expiration" value="3110400000">Forever
+		
+    </li>
     
     <li class="submit"><input type="submit" value="Paste it"/></li>
 </ol>
